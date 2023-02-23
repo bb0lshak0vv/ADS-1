@@ -4,11 +4,20 @@
 
 
 bool checkPrime(uint64_t value) {
-// вставьте код функции
+  for (uint16_t i = 2; i * i < value; i++)
+          if (value % i == 0)
+              return false;
+      return true;
 }
 
 uint64_t nPrime(uint64_t n) {
-// вставьте код функции
+  uint64_t res = 1, cnt = 0;
+  while (cnt < n){
+    res++;
+    if (checkprime(res))
+      cnt++;
+  }
+  return res;
 }
 
 uint64_t nextPrime(uint64_t value) {
